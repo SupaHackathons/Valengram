@@ -4,7 +4,8 @@
   "description": "a universal redux boiler plate from scratch",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "build": "webpack"
   },
   "author": "Nathan Hsieh",
   "license": "ISC",
