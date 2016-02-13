@@ -3,3 +3,4 @@ dist
 
 # Bundled JS
 build/bundle.js
+build/style.css
