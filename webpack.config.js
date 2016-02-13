@@ -1,11 +1,14 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const path = require('path')
+const path = require('path');
+const webpack = require('webpack');
 
 const PATHS = {
   build: path.join(__dirname, 'build'),
-  app: path.join(__dirname, 'src', 'app'),
+  app: path.join(__dirname, 'src'),
+  client: path.join(__dirname, 'src', 'client'),
   server: path.join(__dirname, 'src', 'server'),
+  shared: path.join(__dirname, 'src',  'shared'),
   test: path.join(__dirname, 'test')
 }
 
@@ -17,14 +20,22 @@ const cssLoader = 'css-loader?modules' +
 
 module.exports = {
   devtool: 'eval',  // Helpful for debugging
-  entry: path.join(PATHS.app, 'index.js'),
+  entry: [
+    'webpack-dev-server/client?http://127.0.0.1:8080/',
+    'webpack/hot/only-dev-server',
+    path.join(PATHS.app)
+  ],
   output: {
     path: PATHS.build,
     filename: "bundle.js"
   },
   resolve: {
     // Automagically figure out the extension in import statements
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [
+      path.resolve(__dirname, './src/shared/'),
+      path.resolve(__dirname, './src/shared/components/')
+    ]
   },
   module: {
     preLoaders: [
@@ -32,14 +43,14 @@ module.exports = {
         // Yell at me if there are lint issues
         test: /\.jsx?$/,
         loaders: ['eslint'],
-        include: [PATHS.app, PATHS.server, PATHS.test]
+        include: [PATHS.app, PATHS.server, PATHS.test, PATHS.client, PATHS.shared]
       }
     ],
     loaders: [
       {
         // Lets me use ES6+ in my code!
         test: /\.jsx?$/,
-        include: [PATHS.app, PATHS.server],
+        include: [PATHS.app, PATHS.server, PATHS.test, PATHS.client, PATHS.shared],
         loader: 'babel',
         query: {
           presets: ['es2015', 'react', 'stage-1']
@@ -56,5 +67,12 @@ module.exports = {
   plugins: [
     // Bundle-up my css and output into one file
     new ExtractTextPlugin('style.css', { allChunks: true }),
-  ]
+  ],
+  devServer: {
+    hot: true,
+    proxy: {
+      '*': 'http://127.0.0.1:' + (process.env.PORT || 3000)
+    },
+    host: '127.0.0.1'
+  }
 };

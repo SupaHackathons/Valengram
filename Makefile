@@ -27,7 +27,7 @@ dev-client:
 
 dev-server:
 	@echo "Starting backend dev-server..."
-	$(NODEMON) --exec $(NODE) --harmony -- src/server/index.js
+	$(NODEMON) --exec $(NODE) --harmony -- src/server/index.jsx
 
 check:
 	$(MAKE) lint
