@@ -1,0 +1,12 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-react"],
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    // Dont yell if there are semi-colons
+    semi: [2, "always"]
+  },
+}

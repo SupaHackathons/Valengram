@@ -1,25 +1,60 @@
-var path = require('path'); // This is a node api that returns us a concatenated path
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const path = require('path')
+
+const PATHS = {
+  build: path.join(__dirname, 'build'),
+  app: path.join(__dirname, 'src', 'app'),
+  server: path.join(__dirname, 'src', 'server'),
+  test: path.join(__dirname, 'test')
+}
+
+// Configure css-loader so I can use CSS modules and have somewhat identifable
+// hashes for class names to facilitate debugging
+const cssLoader = 'css-loader?modules' +
+  '&importLoaders=1' +
+  '&localIdentName=[name]__[local]___[hash:base64:5]'
 
 module.exports = {
-  entry: './main.js',
+  devtool: 'eval',  // Helpful for debugging
+  entry: path.join(PATHS.app, 'index.js'),
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'dist')
+    path: PATHS.build,
+    filename: "bundle.js"
+  },
+  resolve: {
+    // Automagically figure out the extension in import statements
+    extensions: ['', '.js', '.jsx']
   },
   module: {
+    preLoaders: [
+      {
+        // Yell at me if there are lint issues
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: [PATHS.app, PATHS.server, PATHS.test]
+      }
+    ],
     loaders: [
       {
+        // Lets me use ES6+ in my code!
         test: /\.jsx?$/,
-        loader: 'babel-loader', // equivalent to 'babel'
-        exclude: /node_modules/,
+        include: [PATHS.app, PATHS.server],
+        loader: 'babel',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-1']
         }
+      },
+      {
+        // Let me use CSS modules!
+        test: /\.css$/,
+        include: PATHS.app,
+        loader: ExtractTextPlugin.extract('style-loader', cssLoader)
       }
     ]
   },
-  resolve: {
-    // Allows us to require('file') rather than require('file.js')
-    extensions: ['', '.js', '.jsx']
-  }
+  plugins: [
+    // Bundle-up my css and output into one file
+    new ExtractTextPlugin('style.css', { allChunks: true }),
+  ]
 };

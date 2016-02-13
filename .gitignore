@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# Bundled JS
+build/bundle.js
