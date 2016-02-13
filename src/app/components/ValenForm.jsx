@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import styles from '../styles/Valengram.css';
 
 export default class ValenForm extends Component {
+  onClick = (e) => {
+    e.preventDefault();
+    this.props.history.push('/valentine/');
+  };
+
   render () {
     return (
       <div>
@@ -13,7 +18,7 @@ export default class ValenForm extends Component {
           placeholder='Where did you first meet?' />
         <input type='text' className={styles.questionInput}
           placeholder='What do you love most about your valetine' />
-        <input type='submit' />
+        <input type='submit' onClick={this.onClick}/>
       </div>
     );
   }
