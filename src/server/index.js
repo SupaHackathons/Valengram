@@ -10,6 +10,16 @@ function main (opts) {
   let app = express();
 
   /* --------- BEGIN Middlewares --------- */
+  // Add a trailing '/' to the path if there is none
+  app.use(function(req, res, next) {
+    if (req.path.substr(-1) !== '/' && req.path.length > 1) {
+      const query = req.url.slice(req.path.length);
+      res.redirect(301, req.path + '/' + query);
+    } else {
+      next();
+    }
+  });
+
   // Logging
   app.use(morgan('dev'));
 

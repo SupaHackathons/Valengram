@@ -7,6 +7,7 @@
   },
   "rules": {
     // Dont yell if there are semi-colons
-    semi: [2, "always"]
-  },
+    semi: [2, "always"],
+    react/prop-types: 0
+  }
 }
