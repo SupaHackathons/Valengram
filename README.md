@@ -1,6 +1,13 @@
 # Valengram
 Send your loved one a personalized valentine's day card!
 
+## Table of Contents
+* [Quickstart](#quickstart)
+* [Tests](#tests)
+* [Contributing](#contributing)
+* [Deploying](#deploying)
+* [License](#license)
+
 ### Quickstart
 To see get it running
 ```
@@ -40,3 +47,15 @@ For this project let's use a rebase workflow to merge changes. Here's how it wor
 * Now switchback to master, verify that you still have the latest, if yes, rebase your branch into master `git checkout master` `git rebase feature-branch`
 * To be extra safe you may want to run `make check` once more, but you don't really need to. At this point feel free to push it live `git push origin master`
 * Ping the rest of the team to let us know you've pushed!
+
+### Deploying
+For now we are deploying to github pages, it's pretty easy. Run this in your terminal
+```
+make build
+gh-pages -d build
+```
+This will publish all the files in the `build` directory to the gh-pages branch.
+Now you can see the app live at http://supahackathons.github.io/Valengram
+
+### License
+MIT
