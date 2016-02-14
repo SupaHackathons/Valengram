@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 const { func } = PropTypes;
 import Image from './image';
+import map from 'lodash/collection/map';
 import styles from '../styles/Valengram.css';
 import DropZone from 'react-dropzone';
 
@@ -10,45 +11,30 @@ export default class ValenForm extends Component {
     onFormSubmit: func
   };
 
-  onClick = (e) => {
-    this.props.onFormSubmit(this.state);
-    console.log('E', e);
-    e.preventDefault();
-    this.props.history.push('/valentine/');
-
-    console.log('VALFORM STATE', this.state);
-  };
-
   state = {
     files: [],
     text: []
+  };
+
+  onClick = (e) => {
+    e.preventDefault();
+    let text = [];
+    map(e.target.getElementsByTagName('input'), (input) => {
+      text.push(input.value);
+    });
+    const submitData = {
+      files: this.state.files,
+      text: text
+    };
+    this.props.onFormSubmit(submitData);
+    console.log('VALFORM STATE', this.state);
+    this.props.history.push('/valentine/');
   };
 
   onDrop = (file) => {
     this.setState(function (prevState, currProps) {
       console.log('previous state files', prevState.files);
       return { files: prevState.files.concat(file) };
-    });
-  };
-
-  handleName = (event) => {
-    this.setState((prevState, currProps) => {
-      prevState.text[0] = event.target.value;
-      return { text: prevState.text };
-    });
-  };
-
-  handlePlace = (event) => {
-    this.setState((prevState, currProps) => {
-      prevState.text[1] = event.target.value;
-      return { text: prevState.text };
-    });
-  };
-
-  handleLove = (event) => {
-    this.setState((prevState, currProps) => {
-      prevState.text[2] = event.target.value;
-      return { text: prevState.text };
     });
   };
 
@@ -66,14 +52,17 @@ export default class ValenForm extends Component {
         </div>
           : <div>Waiting for file</div>}
 
-        <form>
-          <input onChange={this.handleName} type='text' className={styles.questionInput}
-            placeholder="What is your valentine's name/nickname?" />
-          <input onChange={this.handlePlace} type='text' className={styles.questionInput}
-            placeholder='Where did you first meet?' />
-          <input onChange={this.handleLove} type='text' className={styles.questionInput}
-            placeholder='What do you love most about your valetine' />
-          <input type='submit' onClick={this.onClick}/>
+        <form onSubmit={this.onClick}>
+          <input type='text'
+                 className={styles.questionInput}
+                 placeholder="What is your valentine's name/nickname?" />
+          <input type='text'
+                 className={styles.questionInput}
+                 placeholder='Where did you first meet?' />
+          <input type='text'
+                 className={styles.questionInput}
+                 placeholder='"I love how you..."' />
+          <button type='submit' value='submit'>Submit! </button>
         </form>
       </div>
     );
