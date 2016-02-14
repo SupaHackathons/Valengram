@@ -92,7 +92,7 @@ export default class ScrollItem extends Component {
       [styles.sticky]: true,
       [styles.frozen]: false
     });
-    const argsStyle = {
+    const imgStyle = {
       // height: isFrozen ? this.state.height : 'auto',
       zIndex: idx
     };
@@ -100,11 +100,11 @@ export default class ScrollItem extends Component {
     return (
       <div key={idx}
            className={argsClass}
-           style={argsStyle}>
-        <img src={source} className={styles.images}/>
+           style={imgStyle}>
         <div className={styles.textWrapper}>
           <span className={styles.text}>{text}</span>
         </div>
+        <img src={source} className={styles.images}/>
       </div>
     );
   }

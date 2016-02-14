@@ -19,10 +19,12 @@ body {
 
 .text {
   color: white;
+  font-size: 5rem;
+  z-index: 1;
   font-family: 'Tangerine', cursive;
-  display: flex;
+  align-self: center;
   position: absolute;
-  top: .5vh;
+  top: 50vh;
 }
 
 .frozen {
