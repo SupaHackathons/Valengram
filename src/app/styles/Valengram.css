@@ -24,6 +24,22 @@
   margin: 30px;
 }
 
+.valForm {
+  height: 100vh;
+  width: 100vw;
+  background-size:cover;
+}
+
+
+
+.valRoot {
+  height: auto;
+}
+
+.valApp {
+
+}
+
 .valImageContainer {
   text-align: center;
   display: flex;

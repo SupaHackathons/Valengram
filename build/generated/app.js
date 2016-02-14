@@ -47,11 +47,11 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -127,11 +127,11 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -178,6 +178,20 @@ module.exports =
 	      _this.setState({
 	        valData: val
 	      });
+<<<<<<< Updated upstream
+=======
+	    }, _this.state = {
+	      valData: {
+	        files: [{
+	          preview: 'http://i.imgur.com/duKgcOv.jpg'
+	        }, {
+	          preview: 'http://i.imgur.com/xOH0u58.jpg'
+	        }, {
+	          preview: 'http://i.imgur.com/Eo02jkb.jpg'
+	        }],
+	        text: ['1', '2', '3']
+	      }
+>>>>>>> Stashed changes
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
@@ -205,11 +219,11 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -677,7 +691,15 @@ module.exports =
 	      args[_key] = arguments[_key];
 	    }
 
+<<<<<<< Updated upstream
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ValenForm)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+=======
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ValenForm)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.onClick = function (e) {
+	      _this.props.onFormSubmit(_this.state);
+	      e.preventDefault();
+	      _this.props.history.push('/valentine/');
+	    }, _this.state = {
+>>>>>>> Stashed changes
 	      files: [],
 	      text: []
 	    }, _this.onClick = function (e) {
@@ -695,7 +717,6 @@ module.exports =
 	      _this.props.history.push('/valentine/');
 	    }, _this.onDrop = function (file) {
 	      _this.setState(function (prevState, currProps) {
-	        console.log('previous state files', prevState.files);
 	        return { files: prevState.files.concat(file) };
 	      });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -706,7 +727,7 @@ module.exports =
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: _Valengram2.default.valForm },
 	        _react2.default.createElement(
 	          'h1',
 	          null,
@@ -779,11 +800,11 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -834,7 +855,7 @@ module.exports =
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"questionInput":"Valengram__questionInput___1Wemo","valImage":"Valengram__valImage___Mjwn1","valImageContainer":"Valengram__valImageContainer___1CEnQ"};
+	module.exports = {"questionInput":"Valengram__questionInput___1Wemo","valImage":"Valengram__valImage___Mjwn1","valForm":"Valengram__valForm___1f9dz","valImageContainer":"Valengram__valImageContainer___1CEnQ"};
 
 /***/ },
 /* 12 */,
@@ -2706,11 +2727,11 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -2781,7 +2802,15 @@ module.exports =
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+<<<<<<< Updated upstream
 	        _react2.default.createElement('i', { className: 'fa fa-heart-o fa-6 ' + _Valentine2.default.heart }),
+=======
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'here\'s your Valengram!'
+	        ),
+>>>>>>> Stashed changes
 	        valData.files.map(this._mkValImage)
 	      );
 	    }
@@ -2818,11 +2847,11 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
@@ -2848,6 +2877,7 @@ module.exports =
 
 	var string = _react.PropTypes.string;
 	var number = _react.PropTypes.number;
+
 
 	// var SCROLL_TIMEOUT = 240;
 	// var CHECK_INTERVAL = SCROLL_TIMEOUT / 6;

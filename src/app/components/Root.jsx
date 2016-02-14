@@ -1,4 +1,5 @@
 import React, { Component, cloneElement } from 'react';
+import styles from '../styles/Valengram.css';
 
 import Nav from './navbar';
 
