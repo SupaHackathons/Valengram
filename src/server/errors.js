@@ -3,5 +3,5 @@ export function UnsupportedStoreError (store_type) {
   return {
     'name': 'UnsupportedStoreError',
     'message': `${store_type} is not supported`
-  }
+  };
 }

@@ -1,7 +1,5 @@
 /* Seed data for bootstraping app */
 
-import uuid from 'node-uuid'
-
 // Questions are in the form
 // "'What is your valentine's name/nickname?"
 // 'Where did you first meet?'
@@ -34,7 +32,7 @@ const grams = [
       'http://i.imgur.com/FHPJXqz.jpg'
     ],
     'text': ['Angela', 'Skygarden', 'Your womanly energy']
-  },
-]
+  }
+];
 
-export default grams
+export default grams;
