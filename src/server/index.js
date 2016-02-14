@@ -4,6 +4,9 @@ import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 import program from 'commander';
+import { renderToString } from 'react-dom/server'
+
+import AppComponent from '../../build/generated/app'
 
 function main (opts) {
   // Initialize express app
@@ -37,6 +40,28 @@ function main (opts) {
   app.use(bodyParser.json());
 
   // Routes middlewares
+  app.use('/', index)
+
+  /* --------- BEGIN Route handlers --------- */
+  function index (req, res) {
+    // XXX: This is pretty hacky, should cleanup
+    const componentHTML = renderToString(AppComponent)
+    const HTML = `
+    <!Doctype html>
+      <html>
+        <head>
+          <title>Valengram 2016</title>
+          <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        <body>
+          <div id='react'>${componentHTML}</div>
+          <script type="text/javascript" src='bundle.js'></script>
+        </body>
+      </html>
+    `
+    res.send(HTML)
+  }
+
   // TODO: ADD ME!
   /* ---------- END Route handlers ---------- */
 

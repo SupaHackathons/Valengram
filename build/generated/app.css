@@ -1,0 +1,18 @@
+/* --------- BEGIN Common styles --------- */
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    outline: 1px solid transparent;
+}
+
+/* --------- END Common styles --------- */
+
+.Valengram__questionInput___1Wemo {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
