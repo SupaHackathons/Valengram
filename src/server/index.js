@@ -4,9 +4,9 @@ import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 import program from 'commander';
-import { renderToString } from 'react-dom/server'
+import { renderToString } from 'react-dom/server';
 
-import AppComponent from '../../build/generated/app'
+import AppComponent from '../../build/generated/app';
 
 function main (opts) {
   // Initialize express app
@@ -40,12 +40,12 @@ function main (opts) {
   app.use(bodyParser.json());
 
   // Routes middlewares
-  app.use('/', index)
+  app.use('/', index);
 
   /* --------- BEGIN Route handlers --------- */
   function index (req, res) {
     // XXX: This is pretty hacky, should cleanup
-    const componentHTML = renderToString(AppComponent)
+    const componentHTML = renderToString(AppComponent);
     const HTML = `
     <!Doctype html>
       <html>
@@ -58,9 +58,9 @@ function main (opts) {
           <script type="text/javascript" src='bundle.js'></script>
         </body>
       </html>
-    `
-    res.send(HTML)
-  }
+    `;
+    res.send(HTML);
+  };
 
   // TODO: ADD ME!
   /* ---------- END Route handlers ---------- */

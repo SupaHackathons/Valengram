@@ -36,6 +36,7 @@ For this project let's use a rebase workflow to merge changes. Here's how it wor
 * Checkout your branch and rebase master onto it `git checkout feature-branch` `git rebase master`
 * There may be some merge conflicts, fix those if they appear
 * If there were conflicts, make sure you run `make check` again and that it works without problems
+* If there were conflicts, commit & push them
 * Now switchback to master, verify that you still have the latest, if yes, rebase your branch into master `git checkout master` `git rebase feature-branch`
 * To be extra safe you may want to run `make check` once more, but you don't really need to. At this point feel free to push it live `git push origin master`
 * Ping the rest of the team to let us know you've pushed!
