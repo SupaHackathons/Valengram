@@ -1,6 +1,8 @@
 node_modules
 dist
+.idea
 
 # Bundled JS
 build/bundle.js
 build/style.css
+
