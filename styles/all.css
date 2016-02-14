@@ -1,0 +1,123 @@
+/* --------- BEGIN Common styles --------- */
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    outline: 1px solid transparent;
+}
+
+#react {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+/* --------- END Common styles --------- */
+
+/* --------- BEGIN Navbar styles --------- */
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #eee;
+  padding: 20px;
+}
+
+.navItem {
+  font-family: 'Tangerine', cursive;
+  font-size: 2rem;
+  border-radius: 100%;
+  margin: 0 1rem;
+  color: blue;
+  a {
+    text-decoration: none;
+    color: red;
+  }
+}
+
+/* --------- End Navbar styles --------- */
+
+/* --------- BEGIN ValenForm styles --------- */
+.questionInput {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.valImage {
+  width: 200px;
+  height: 200px;
+  flex-grow: 1;
+  margin: 30px;
+}
+
+.valForm {
+  height: 100vh;
+  width: 100vw;
+  background-size:cover;
+  background-image: url('../images/valForm.jpg')
+}
+
+
+.valRoot {
+  height: auto;
+}
+
+.valImageContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* --------- END ValenForm styles --------- */
+
+/* --------- BEGIN Valengram styles --------- */
+.heart {
+  color: white;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  i {
+    font-size: 20rem;
+    align-self: center;
+  }
+}
+
+/* --------- END Valengram styles --------- */
+
+/* --------- BEGIN ScrollItem styles --------- */
+
+.valenTextWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.valenImages {
+  width: 100%;
+}
+
+.valenText {
+  color: white;
+  font-size: 5rem;
+  z-index: 1;
+  font-family: 'Tangerine', cursive;
+  align-self: center;
+  position: absolute;
+  top: 50vh;
+}
+
+/* --------- END ScrollItem styles --------- */
