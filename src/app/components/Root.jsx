@@ -17,7 +17,7 @@ export default class Root extends Component {
           preview: 'http://i.imgur.com/Eo02jkb.jpg'
         }
       ],
-      text: ['0', '1', '2']
+      text: ['Roses are red, Violets are blue', 'Ladies i\'m single', 'Call me...']
     }
   };
 
