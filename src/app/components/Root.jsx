@@ -1,6 +1,6 @@
 import React, { Component, cloneElement } from 'react';
 
-import Nav from './navbar';
+import Nav from './Navbar';
 
 export default class Root extends Component {
 

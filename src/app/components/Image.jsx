@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from '../styles/Valengram.css';
 
 export default class Image extends Component {
 
@@ -10,7 +9,7 @@ export default class Image extends Component {
   render () {
     return (
       <div>
-        <img className={styles.valImage} src={this.props.img} />
+        <img className='valImage' src={this.props.img} />
       </div>
     );
   }

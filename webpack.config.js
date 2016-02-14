@@ -9,10 +9,6 @@ const PATHS = {
   test: path.join(__dirname, 'test')
 }
 
-// Configure css-loader `111 1111    1111    1  1 1 ``````1 1 1               1so I can use CSS modules and have somewhat identifable
-// hashes for class names to facilitate debugging
-const cssLoader = 'css-loader?modules' + '&importLoaders=1' + '&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
-
 const preLoaders = [
   {
     // Yell at me if there are lint issues
@@ -31,16 +27,7 @@ const loaders = [
     query: {
       presets: ['es2015', 'react', 'stage-1']
     }
-  },
-  {
-    // Let me use CSS modules!
-    test: /\.css$/,
-    include: PATHS.app,
-    loader: ExtractTextPlugin.extract('style-loader', cssLoader)
-  },
-  //{ test: /\.css$/, loader: "style-loader!css-loader?root=." },
-  //{ test: /\.png$/, loader: "url-loader?limit=100000" },
-  //{ test: /\.jpg$/, loader: "file-loader" }
+  }
 ]
 
 // Config for serving frontend through webpack
@@ -60,39 +47,7 @@ const clientConfig = {
   module: {
     preLoaders: preLoaders,
     loaders: loaders,
-  },
-  plugins: [
-    // Bundle-up my css and output into one file
-    new ExtractTextPlugin('style.css', { allChunks: true })
-  ]
+  }
 }
 
-// Config for serving frontend throug node
-const serverConfig = {
-  name: 'server',
-  target: 'node',
-  context: PATHS.app,
-  entry: {
-    app: path.join(PATHS.app, 'components', 'App.jsx')
-  },
-  output: {
-    path: path.join(PATHS.build, 'generated'),
-    filename: '[name].js',
-    libraryTarget: 'commonjs2'
-  },
-  externals: /^[a-z\-0-9]+$/,
-  resolve: {
-    // Automagically figure out the extension in import statements
-    extensions: ['', '.js', '.jsx']
-  },
-  module: {
-    preLoaders: preLoaders,
-    loaders: loaders,
-  },
-  plugins: [
-    // Output CSS into multiple files
-    new ExtractTextPlugin('[name].css')
-  ]
-}
-
-module.exports = [clientConfig, serverConfig]
+module.exports = [clientConfig]

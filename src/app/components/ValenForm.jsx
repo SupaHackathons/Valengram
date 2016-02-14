@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 const { func } = PropTypes;
 import Image from './image';
 import map from 'lodash/collection/map';
-import styles from '../styles/Valengram.css';
 import DropZone from 'react-dropzone';
 import { Input } from 'react-bootstrap';
 
@@ -40,7 +39,7 @@ export default class ValenForm extends Component {
 
   render () {
     return (
-      <div style={{'backgroundImage': 'url(./valForm.jpg)'}} className={styles.valForm}>
+      <div className='valForm'>
         <h1>Make a Valengram!</h1>
         <DropZone onDrop={this.onDrop}>
           <div>Drop A Photo of your Valentine into here</div>
@@ -48,19 +47,22 @@ export default class ValenForm extends Component {
 
         {this.state.files.length > 0 ? <div>
           <h2>Uploading {this.state.files.length} files...</h2>
-          <div className={styles.valImageContainer}>{this.state.files.map((file, idx) => <Image img={file.preview} key={idx} />)}</div>
+          <div className='valImageContainer'>
+            {this.state.files.map((file, idx) =>
+              <Image img={file.preview} key={idx} />)}
+            </div>
         </div>
           : <div>Waiting for file</div>}
 
         <form onSubmit={this.onClick}>
           <Input type='textarea'
-                 className={styles.questionInput}
+                 className='questionInput'
                  placeholder="What is your valentine's name/nickname?" />
           <Input type='textarea'
-                 className={styles.questionInput}
+                 className='questionInput'
                  placeholder='Where did you first meet?' />
           <Input type='textarea'
-                 className={styles.questionInput}
+                 className='questionInput'
                  placeholder='"I love how you..."' />
           <button type='submit' value='submit'>Submit! </button>
         </form>
