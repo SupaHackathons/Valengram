@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+const { func } = PropTypes;
 import Image from './image';
 import styles from '../styles/Valengram.css';
 import DropZone from 'react-dropzone';
@@ -6,7 +7,7 @@ import DropZone from 'react-dropzone';
 export default class ValenForm extends Component {
 
   static propTypes = {
-    onFormSubmit: React.PropTypes.func
+    onFormSubmit: func
   };
 
   onClick = (e) => {
@@ -55,7 +56,6 @@ export default class ValenForm extends Component {
     return (
       <div>
         <h1>Make a Valengram!</h1>
-
         <DropZone onDrop={this.onDrop}>
           <div>Drop A Photo of your Valentine into here</div>
         </DropZone>

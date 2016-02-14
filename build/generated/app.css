@@ -16,3 +16,48 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.Valengram__valImage___Mjwn1 {
+  width: 200px;
+  height: 200px;
+  flex-grow: 1;
+  margin: 30px;
+}
+
+.Valengram__valImageContainer___1CEnQ {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.ScrollItem__wrapper___21zQX {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.ScrollItem__images___oeyqB {
+  max-width: 100%;
+}
+
+.ScrollItem__text___1hOnM {
+  display: flex;
+  position: absolute;
+  top: .5vh;
+}
+
+.ScrollItem__frozen___1HS0d {
+  position: fixed;
+  top: 0;
+  z-index: -1
+}
+
+.ScrollItem__sticky___itkVR {
+  width: 100%;
+  padding: 0;
+  margin:0;
+}

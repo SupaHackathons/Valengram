@@ -9,7 +9,14 @@ export default class Root extends Component {
   };
 
   state = {
-    valData: {}
+    valData: {
+      files: [
+        'http://i.imgur.com/duKgcOv.jpg',
+        'http://i.imgur.com/Eo02jkb.jpg',
+        'http://i.imgur.com/xOH0u58.jpg'
+      ],
+      text: ['1', '2', '3']
+    }
   };
 
   render () {
