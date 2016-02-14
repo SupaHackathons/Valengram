@@ -33,6 +33,11 @@
 }
 
 
+.Valentine__heart___346CX {
+  font-size: 5rem;
+  color: white;
+  position: absolute;
+}
 .ScrollItem__wrapper___21zQX {
   display: flex;
   flex-direction: column;
@@ -41,10 +46,12 @@
 }
 
 .ScrollItem__images___oeyqB {
-  max-width: 100%;
+  width: 100%;
 }
 
 .ScrollItem__text___1hOnM {
+  color: white;
+  font-family: 'Tangerine', cursive;
   display: flex;
   position: absolute;
   top: .5vh;

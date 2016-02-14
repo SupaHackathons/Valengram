@@ -1,12 +1,8 @@
 import React, { Component, cloneElement } from 'react';
 
-export default class Root extends Component {
+import Nav from './navbar';
 
-  onFormSubmit = (val) => {
-    this.setState({
-      valData: val
-    });
-  };
+export default class Root extends Component {
 
   state = {
     valData: {
@@ -25,10 +21,17 @@ export default class Root extends Component {
     }
   };
 
+  onFormSubmit = (val) => {
+    this.setState({
+      valData: val
+    });
+  };
+
   render () {
     return (
       <div>
-        <h3>Create your Valengram</h3>
+        <Nav history={this.props.history}
+             location={this.props.location} />
         {this.props.children && cloneElement(this.props.children,
           {onFormSubmit: this.onFormSubmit, valData: this.state.valData})}
       </div>

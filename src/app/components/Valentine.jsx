@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 const {array, shape} = PropTypes;
 
+import styles from './Valentine.css';
 import ScrollItem from './ScrollItem';
 
 export default class Valentine extends Component {
@@ -55,7 +56,9 @@ export default class Valentine extends Component {
     const { valData } = this.props;
     return (
       <div>
-        <h1>here's your Valengram!</h1>
+        <div className={styles.heart}>
+          <i className='fa fa-heart-o fa-6'/>
+        </div>
         {valData.files.map(this._mkValImage)}
       </div>
     );

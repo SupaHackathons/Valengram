@@ -10,6 +10,8 @@
 }
 
 .text {
+  color: white;
+  font-family: 'Tangerine', cursive;
   display: flex;
   position: absolute;
   top: .5vh;

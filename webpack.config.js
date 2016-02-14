@@ -11,7 +11,7 @@ const PATHS = {
 
 // Configure css-loader so I can use CSS modules and have somewhat identifable
 // hashes for class names to facilitate debugging
-const cssLoader = 'css-loader?modules' + '&importLoaders=1' + '&localIdentName=[name]__[local]___[hash:base64:5]'
+const cssLoader = 'css-loader?modules' + '&importLoaders=1' + '&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
 
 const preLoaders = [
   {
