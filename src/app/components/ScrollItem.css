@@ -9,6 +9,14 @@
   width: 100%;
 }
 
+#react {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .text {
   color: white;
   font-family: 'Tangerine', cursive;

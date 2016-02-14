@@ -9,7 +9,7 @@ const PATHS = {
   test: path.join(__dirname, 'test')
 }
 
-// Configure css-loader so I can use CSS modules and have somewhat identifable
+// Configure css-loader `111 1111    1111    1  1 1 ``````1 1 1               1so I can use CSS modules and have somewhat identifable
 // hashes for class names to facilitate debugging
 const cssLoader = 'css-loader?modules' + '&importLoaders=1' + '&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
 
@@ -37,7 +37,10 @@ const loaders = [
     test: /\.css$/,
     include: PATHS.app,
     loader: ExtractTextPlugin.extract('style-loader', cssLoader)
-  }
+  },
+  //{ test: /\.css$/, loader: "style-loader!css-loader?root=." },
+  //{ test: /\.png$/, loader: "url-loader?limit=100000" },
+  //{ test: /\.jpg$/, loader: "file-loader" }
 ]
 
 // Config for serving frontend through webpack
