@@ -41,10 +41,10 @@ export default class Valentine extends Component {
     });
   };
 
-  _mkValImage = (source, idx) => {
+  _mkValImage = (file, idx) => {
     const { text } = this.props.valData;
     return (
-      <ScrollItem source={source}
+      <ScrollItem source={file.preview}
                   text={text[idx]}
                   key={idx}
                   idx={idx}/>

@@ -11,9 +11,15 @@ export default class Root extends Component {
   state = {
     valData: {
       files: [
-        'http://i.imgur.com/duKgcOv.jpg',
-        'http://i.imgur.com/Eo02jkb.jpg',
-        'http://i.imgur.com/xOH0u58.jpg'
+        {
+          preview: 'http://i.imgur.com/duKgcOv.jpg'
+        },
+        {
+          preview: 'http://i.imgur.com/xOH0u58.jpg'
+        },
+        {
+          preview: 'http://i.imgur.com/Eo02jkb.jpg'
+        }
       ],
       text: ['1', '2', '3']
     }
